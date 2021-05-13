@@ -1,0 +1,40 @@
+    
+
+  <table>
+     <p>予約一覧</p>
+      <thead>
+        <tr>
+       
+           <th>金額</th>
+          <th>開始日</th>
+          <th>終了日</th>
+          <th>人数</th>
+          <th>削除</th>
+
+        </tr>
+      </thead> 
+
+      <tbody>
+        <% @reservations.each do |reservation| %>
+          <tr>
+    
+          <th><%= reservation.money%></th>
+           <th><%= reservation.start %></th>
+            <th><%= reservation.end %></th>
+              <th><%= reservation.num %></th>
+         
+            <th>
+              <%= link_to "削除", reservation, method: :delete, data: { confirm: "本当に削除しますか？" } %>
+            </th>
+         
+          </tr>
+       <% end %>
+       
+      </tbody>
+    </table>
+    
+
+
+
+
+ 
